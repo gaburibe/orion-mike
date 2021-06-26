@@ -441,7 +441,7 @@ function getquest(){
   name=$('#participante').val().toLowerCase().replace(/\s/g, '');
   $("#registeredname").html(name);
   $.ajax({
-        url: 'http://localhost:2121/menu',
+        url: 'http://199.244.51.123:2121/menu',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({"name":name}),
@@ -512,7 +512,7 @@ function updateAwnser(element, vv){
 function save(){
   name2save=$("#registeredname").html();
   $.ajax({
-        url: 'http://localhost:2121/saveprogress',
+        url: 'http://199.244.51.123:2121/saveprogress',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({"name":name2save,"cuestionario":_MENU}),
