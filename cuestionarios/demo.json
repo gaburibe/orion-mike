@@ -1,0 +1,64 @@
+{
+	"P:1": {
+		"caratula": "caratulas/c1.png",
+		"texto": "Carátula 1",
+		"inputs": [{
+			"type": "select",
+			"vals": ["Categoría 1", "Categoría 2"],
+			"position": [202, 150],
+			"respuesta": "-"
+		}, {
+			"type": "radio",
+			"vals": ["Persona Moral", "Persona Física"],
+			"position": [102, 86],
+			"respuesta": "-"
+		}, {
+			"type": "text",
+			"position": [585, 150],
+			"respuesta": "-"
+		}, {
+			"type": "text",
+			"position": [585, 100],
+			"respuesta": "-"
+		}, {
+			"type": "checkbox",
+			"position": [68, 237],
+			"respuesta": "-"
+		}],
+		"type": "caratula",
+		"respuesta": ""
+	},
+	"P:2": {
+		"caratula": "caratulas/c2.png",
+		"type": "caratula",
+		"inputs": [{
+			"type": "text",
+			"position": [185, 120],
+			"respuesta": "-"
+		}]
+	},
+	"P:3": {
+		"caratula": "caratulas/c3.png",
+		"type": "caratula",
+		"inputs": [{
+			"type": "text",
+			"position": [185, 120],
+			"respuesta": "-"
+		},
+		{
+			"type": "text",
+			"position": [550, 120],
+			"respuesta": "-"
+		},
+		{
+			"type": "text",
+			"position": [550, 163],
+			"respuesta": "-"
+		}, {
+			"type": "radio",
+			"vals": ["SI", "NO"],
+			"position": [110, 150],
+			"respuesta": "-"
+		}]
+	}
+}

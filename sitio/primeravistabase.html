@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <meta charset="UTF-8">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js" />
+	<script type="text/javascript" src="js/bootstrap.js" />
+	<link href="css/addons/datatables.min.css" rel="stylesheet">
+	<!-- MDBootstrap Datatables  -->
+<script type="text/javascript" src="js/addons/datatables.min.js"></script>
+
+	<title>B v 1.0</title>
+</head>
+<style type="text/css">
+	table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+}
+body{
+	/*background: url("img/pasto.png");
+	background-size: 100vw;*/
+	background-color: white;
+}
+</style>
+<body>
+
+	Buscar por palabra:<br>
+		<input type="text" id="myinput" style="width:100%;" class="rabi"/><br>
+
+	<table id="myTable" class="table products" cellspacing="0" width="100%"> <!-- table-striped table-bordered table-sm -->
+	  	<thead>
+	    <tr>
+	      
+	      <th class="th-sm">Nombre
+	      </th>
+	      <th class="th-sm">Tipo
+	      </th>
+	      <th class="th-sm">Descripción
+	      </th>
+	      <th class="th-sm">Sectores
+	      </th>
+	      <th class="th-sm">Email
+	      </th>
+	      <th class="th-sm">Dirección
+	      </th>
+	      
+	     
+	    </tr>
+	  	</thead>
+	  	<tbody id="tabla_fondos">
+	    		
+		    
+		</tbody>
+		  <tfoot>
+		    
+		  </tfoot>
+	</table>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	  $("#myinput").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $("#myTable tr").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+	  // $('input:radio[name=zona]').on("click", function() {
+	  //   makesum();
+	  // });
+
+});
+
+
+
+$.getJSON( "base-p1.json", function( data ) {
+	console.log(data)
+  var items = [];
+  $.each( data, function( key, val ) {
+  	res=printpage(val);
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "#gg" );
+});
+
+function printpage(page){
+	toinsert="";
+	for(key in page){
+		item=page[key];
+		Nombre=item["Nombre"];
+		Tipo=item["Tipo"];
+		Direccion=item["Direccion"];
+		toinsert='<tr><td>'
+		+Nombre+'</td><td>'
+		+Tipo+'</td><td>'
+		+item["Descripcion"]+'</td><td>'
+		+item["Sectores"]+'</td><td>'
+		+item["Email"]+'</td><td>'
+		+Direccion+'</td></tr>';
+		$("#tabla_fondos").append(toinsert);
+		console.log(key,item)
+	}
+  	
+    
+  
+}
+</script>
+</html>

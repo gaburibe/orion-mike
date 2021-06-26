@@ -1,0 +1,192 @@
+{
+	"name":"EmpresasV1",
+	"lang":"esp",
+	"cuestionario":
+	{ 
+		"A: Introducción a la compañía":[
+			{"texto":"¿Es la empresa industrial, comercial o de servicio?",
+			"type":"select",
+			"vals":["industrial", "comercial", "servicios"],
+			"desc":"Descripción:<Br><Br>Una empresa industrial transforma materiales en productos elaborados.<Br><Br>Una empresa comercial compra bienes o servicios y los vende, sin transformarlos.<Br><Br>Una empresa de servicios, proporciona activos intangibles.<Br><Br>Ejemplos:<Br><Br>Industrial<Br>Extracción de Recursos Naturales.<Br>Fabricación de consumo por los usuarios finales, o de otras empresas (productos químicos, maquinaria, etc).<Br><Br>Comerciales<Br>Comercio al por mayor.<Br>Minorista.<Br>Re-vendedores.<Br><Br>Servicios<Br>Transportación.<Br>Servicios Financieros.<Br>Contabilidad, Consultoría, Servicios Jurídicos.<Br>Educación.<Br>Servicios de Salud."}
+			,{"texto":"¿Dónde están localizados los clientes de la compañía? ",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\">Indica de arriba hacia abajo usando criterios de concentración</span><Br> <h5> Ejemplo:<h5><span class=\"ejemploc\">CDMX, Guadalajar, Puebla, Queretaro, Monterrey<span/>"}
+			,{"texto":"¿Cuáles son los segmentos a los que está dirigida la empresa?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\">Separa con una coma los segmentos.</span><h5>Descripción:</h5><Br>División de los compradores/usuarios de los bienes y/o servicios comercializados por la empresa, en consideración de necesidades identificables y/o deseos, género, rentabilidad, rentabilidad potencial, comportamiento de compra, niveles de ingreso disponible, entre otros criterios.<Br><Br><h5>Ejemplo:</h5><Br>En la industria del juego, los casinos siguen el gasto promedio de los clientes. El casino proporciona diferentes experiencias de juego a clientes con altos gastos y con clientes con alto potencial identificados con modelos predictivos distintos a los clientes de bajo gasto. Los casinos gastan más para atraer a jugadores que gastan más, e incluso pagan gastos de viaje y gastos de alojamiento a clientes frecuentes con altos niveles de gasto y que generan mayores beneficios para los casinos."}
+			,{"texto":"¿Qué es lo que la compañía manufactura, distribuye, comercializa?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\">Separa con una coma</span><h5>Descripción:</h5>Un grupo de productos o servicios que están estrechamente relacionados, ya sea porque funcionan de forma similar, se venden a los mismos grupos de clientes, son comercializados a través del mismo punto de venta, o entran en un mismo rango de precio.<Br><Br><h5>Ejemplos:</h5><span style=\"color:aquamarine;\">Bebidas no alcohólicas sin carbonación, incluyendo aguas sin carbonización, Aguas con sabor y aguas enriquecidas,Bebidas energéticas sin carbonización,Jugos,Tés y café,Bebidas Deportivas,Jarabes.</span>"}
+			,{"texto":"¿Cuál es la estrategia de Crecimiento de la empresa?",
+			"type":"open",
+			"vals":[],
+			"desc":" <h5>Descripción:</h5> Los objetivos estratégicos de cada negocio son buscar el crecimiento de flujos de caja. Descomponer las fuentes de crecimiento permite a los administradores tomar las decisiones para saber en qué segmentos de mercado deben competir y alinear sus decisiones estratégicas. <Br><Br><h5>Ejemplo:</h5><span style=\"color:aquamarine;\">forma: 20% a través de nuestro bar, 40% a cuentas claves exclusivas, 10% en festivales, 5% en línea, 35% a bares y restaurantes.</span><Br>Un crecimiento en los flujos de caja puede ser gracias a la reasignación de recursos para la venta de productos y servicios más rentables, el diseño de cartera de productos incorporando productos y servicios de fuerte crecimiento relacionados a la demanda, desinversiones, adquisición o venta de ingresos mediante fusiones y adquisiciones, mejora en la participación de mercado, alianzas estratégicas y operativas, la expansión geográfica, reducción de costos excesivos, mejor segmentación del mercado, mejora del servicio al cliente y la satisfacción, mayor control de planificación y ejecución, entre otros."}
+			,{"texto":"Por favor, describe las principales metas u objetivos a alcanzar con la Estrategia de crecimiento.",
+			"type":"open",
+			"vals":[],
+			"desc":"Ejemplo:<Br><span style=\"color:aquamarine;\">200 K USD de ventas en el 2020 + ventas de bar, 380 K USD de ventas en el 2021 + ventas de 3 unidades (abrir 2ndo bar a inicios del 2021, 3ero a finales)</span>"}
+		],
+		"B: La compañía":[
+			{"texto":"¿Qué tipo de persona jurídica comprende el grupo de empresas operativas?",
+			"type":"open",
+			"vals":[],
+			"desc":"Ejemplo:<Br><span style=\"color:aquamarine;\">S.A.,   S.A. de C.V.,  S. de R.L.,  S. de R.L. de C.V.,  S.C.,  S.A.P.I.,  S.A.P.I. de C.V.</span>"}
+			,{"texto":"¿Cuándo fue legalmente constituida la Empresa y cuando comenzó las operaciones (registrando ingresos o gastos)?",
+			"type":"open",
+			"vals":[],
+			"desc":"Ejemplo:<Br><span style=\"color:aquamarine;\">2017, operaciones inciaron diciembre 2017</span>"}
+			,{"texto":"¿Quiénes son los actuales accionistas formalmente reconocidos?",
+			"type":"open",
+			"vals":[],
+			"desc":"Ejemplo:<Br><span style=\"color:aquamarine;\">Teddy Esteve (16%), Alejandor Zapata(16%), Alain Poncelet (16%),, Nicolas Wassenge(4%), Francisco Perez Correa (1%), Caulier Sugar Free (47%)</span>"}
+			,{"texto":"¿Cómo está compuesta la alta gerencia? (Indica brevemente la fecha en la cual el director entro a la compañía, su experiencia y educación).",
+			"type":"open",
+			"vals":[],
+			"desc":"Ejemplo:<Br><span style=\"color:aquamarine;\">Jerónimo Perez Correa, se formó en distribución y fondeo de cine en México, desarrolló la exportación de mezcal Pierde Almas a los EEUU, NYC y California, y creó un modelo seguido hoy por otras empresas como Mezcal Unión. Dirigió Pelagic Life donde canalizó recursos del Gobierno Estatal de BCS a la fundación, creó el primer timbre postal con tiburones en la historia de México y el primer sistema de certificación de pesca sostenible para distribuidores y restaurantes. Tiene experiencia en las industrias restaurantera, agropecuaria, alimentaria y de  alcohol.</span>"}
+			,{"texto":"¿Dónde están las instalaciones de la compañía?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\">colocar dirección</span>"}
+			,{"texto":"¿Quiénes son los clientes a los que la empresa está dirigida?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>  ¿Quiénes son las empresas o particulares que pueden tener una necesidad o el deseo de adquirir los productos y/o servicios de la empresa para su transformación en otros bienes, la integración en su producto/servicio ofrece, o para su uso final?<Br><h5>Ejemplo:</h5><br><span style=\"color:aquamarine;\">Grupo Hooters de México, Butcher and Son’s, Sicario, Maison Kaiser, Bajo la Tintorera, La Castellana, Pinco Palinno</span>"}
+			,{"texto":"Indica el producto/servicio substituto y complementario que tus clientes pueden comprar. ",
+			"type":"open",
+			"vals":[],
+			"desc":"Ejemplo:<Br>Los servicios Triple Play residenciales requieren teléfonos con servicios (de voz), complementado por internet y programación de televisión. Servicios de telefonía fija (de voz)  pueden ser sustituidos con servicios móviles o Voz sobre IP (protocolo de internet). Una oferta que integre Voz sobre IP puede ser dirigida a los que adoptan tecnología y que son sensibles a los precios."}
+			,{"texto":"¿Por qué consideras que el mercado en el que compites es un mercado atractivo?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>  Un mercado es atractivo por razones como la escasa competencia existente, alto potencial de crecimiento impulsado por tendencias y una adopción amplia del recién creado bien o servicio, los márgenes son elevados, las limitaciones de entrada son altas, las habilidades de la Empresa son únicas y por lo tanto garantiza una importante capacidad para dominar el mercado, existen derechos de propiedad y/o industrial, la consolidación del sector fragmentado es inminente y por lo tanto el alcance de posibles compradores que estén dispuestos a pagar una prima sobre los valores intrínsecos es amplia.<Br><h5>Ejemplo:</h5><span style=\"color:aquamarine;\">México es uno de los mercados cerveceros más importantes del mundo. Hay una constante y creciente demanda para consuir cervezas Low Carb. El mercado artesanal está creciendo a un ritmo de 30% anual.</span>"}
+			,{"texto":"¿Cuál es la estrategia de marketing de la empresa? ",
+			"type":"",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>  Marketing es una serie de actividades que tienen como objetivo asegurar, servir y retener clientes para la empresa; ayudándolos  a comprender las necesidades del mercado, creando un producto o servicio que satisfaga las necesidades del mercado y comunicando su valor a los clientes.<Br>Una estrategia de Marketing debe estar respaldada por un Plan de Marketing que contenga: i) objetivos de marketing, tales como metas de ventas, cuota de mercado, rentabilidad, meta de adquisición de cliente, penetración en el mercado, II) segmentos de clientes objetivo, dividiendo mercados en segmentos que tienen diferentes necesidades de compra, de gusto y hábitos, iii) una descripción  del producto/servicio ofrecido, indicando sus atributos para que puedan diferenciarlos en la mente del consumidor y comuniqué los beneficios al cliente de una manera clara , IV) un proceso de investigación de  mercado continuo para reunir información sobre las preferencias y comportamiento de los clientes, así como productos  del competidor, creando conciencia de marca, V) describir los cuatro elementos de la mezcla de mercadeo, es decir, características  del producto, precio, promoción, y el lugar o canales de distribución del producto, y, por último, VI) la administración de la  relación cliente-proveedor, es decir, el proceso de atraer clientes, manteniendo los clientes y si es posible, vendiendo servicios adicionales al cliente.<Br><h5>Ejemplo:</h5>Un plan de marketing puede contemplar la investigación de mercados mediante grupos de enfoque para entender mejor las necesidades/deseos de los clientes potenciales y en qué medida valorarán determinadas ofertas de una empresa y un plan de segmentación, identificando los clientes objetivos que valoran precios bajos en lugar de calidad y aquellos que quieren lo mejor y están dispuestos a pagar por ello.<Br><span style=\"color:aquamarine;\">Low Carb, craft. Nuestro enfoque de Marketing va a ser competir con las grandes en su propio juego: asegurar cuentas clave a través de estímulos económicos a sus locales y obtener a cambio exclusividad para asegurar volumen y branding para presencia de marca.</span>"}
+			,{"texto":"¿Cómo se promueven los productos/servicios?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>  Publicidad es el arte de llevar a cabo una propuesta de venta y posicionar el producto en la mente del cliente, influyendo en las preferencias de los clientes y consiguiendo una decisión de compra.<Br><h5>Ejemplo:</h5>Un plan de marketing puede contemplar la investigación de mercados mediante grupos de enfoque para entender mejor las necesidades/deseos de los clientes potenciales y en qué medida valorarán determinadas ofertas de una empresa y un plan de segmentación, identificando los clientes objetivos que valoran precios bajos en lugar de calidad y aquellos que quieren lo mejor y están dispuestos a pagar por ello.<Br><span style=\"color:aquamarine;\">Publicidad y Promoción.<Br>Medios de comunicación tradicionales, tales como la televisión y radio comercial, revistas y periódicos comerciales, anuncios en internet y carteles en carreteras,<Br>Catálogos y bases de datos de clientes para identificar promociones,<Br>Clasificar y seleccionar anuncios en revistas,<Br>Telemarketing,<Br>Presentaciones,<Br>Crear comunidades online, marketing digital, aprovechando las redes sociales,<Br>Resultados por motor de búsqueda con palabras clave no remunerado,<Br>Marketing de boca a boca,<Br>Relaciones públicas.</span>"}	
+		],
+		"C: Objetivos estratégicos":[
+			{"texto":"¿Cuáles son los objetivos financieros de la compañía a corto, mediano y largo plazo?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>  Los objetivos financieros fomentan la identificación de pocas variables financieras relevantes de alto nivel. En particular, los responsables son impulsados a elegir variables que ayuden a responder a la pregunta: ¿Cómo nos vemos ante los accionistas?<Br><h5>Ejemplo:</h5><span style=\"color:aquamarine;\"><ul><li>Aumento de ventas de 15% en el 2012.</li><li>Reducir los Costos de bienes en 3% en 2014.</li><li>Reducir los costos de operación como un porcentaje de ventas (Total de empleados, Telecomunicaciones) en 2% en el 2015.</li><li>Realizar exámenes analíticos de asignación de recursos financieros dentro de los 6 meses.</li><li>Pagar/renegociar Deuda no más tarde de Junio, 2013.</li><li>Asegurar proyectos que tienen un gran potencial de generar rendimientos por arriba del costo de capital e implementar una política de manejo de portafolio de inversión corporativa, dentro de los próximos 12 meses.</li><li>Desinvertirnos de Unidades de Negocio que no han logrado cumplir con los objetivos planteados, dentro de un año.</li><li>Planificar inversiones en nuevas y atractivas oportunidades de manera permanente.</li><li>Asegurar que la disciplina de capital se convierta en una cultura corporativa, dentro de seis meses, diseñando políticas corporativas claras.</li></ul></span>"}
+			,{"texto":"¿Cuáles son los objetivos de satisfacción de los clientes de la compañía a corto, mediano y largo plazo?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>La perspectiva del cliente fomenta la identificación de medidas que responden a la pregunta ¿Cómo ven los clientes a la empresa?  <Br><Br><h5>Ejemplo:</h5><br><span style=\"color:aquamarine;\"><ul><li>Lograr el 75% del Plan de Acción para el desarrollo de productos y plan de Innovación para 2011, para los siguientes nueve meses,</li><li>Reposicionar la marca, implementando la estrategia de comunicación de marketing sugerida y aprobada por asesores de marketing, en los siguientes 6 semanas,</li><li>Analizar alternativas para reducir el tráfico de clientes y tiempo de espera a no más de 10 minutos en horas pico, y discutir las conclusiones preliminares a finales de enero, 2012,</li><li>Pintar inmuebles e instalar aire acondicionado en 2 tiendas por mes, para mejorar la atmósfera de todas las tiendas y mantener la misma imagen de toda la cadena, a partir de 2013,</li><li>Facilitar la experiencia de compra mejorando la página web, en 2012.</li><li>Crear un departamento  para la devolución de productos defectuosos para honrar las garantías ofrecidas por los fabricantes, </li><li>Conocimiento a fondo de parte de la fuerza de ventas de los productos/servicios vendidos,</li><li>Honrar la oferta de valor a tiempo, con la calidad y precio ofrecido, y supervisar y evaluar la satisfacción del cliente con encuestas que serán lanzadas cada 6 meses,</li><li>Garantizar un alto valor o alto beneficio en la percepción de los clientes de recibir un mayor valor que el precio pagado, ofreciendo distintas exp"}
+			,{"texto":"¿Cuál es el proceso de negocio de la compañía en el corto, mediano y largo plazo? ",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>La perspectiva interna del proceso de negocio impulsa la identificación de las medidas que responden a la pregunta ¿En qué debe sobresalir la empresa?  <Br><Br><h5>Ejemplo:</h5><br><span style=\"color:aquamarine;\"><ul><li>Fabricación: Reducir defectos en 5% para el 2011,</li><li>Usar de punto de referencia el aseguramiento de la calidad utilizada por los competidores y reportar los resultados dentro de los 3 meses siguientes,</li><li>Modificar el ciclo de producción a producción “justo a tiempo” y reducir los niveles de inventario en 2.5% cada año, empezando en 2011,</li><li>Ventas: implementar el software de administración de relación cliente-proveedor y garantizar su uso por al menos el 90% de los ejecutivos de ventas a más tardar en el 2013,</li><li>Servicio al Cliente: Revisar Tickets de y reevaluar herramientas alternativas garantizando una respuesta del 95% a los clientes, en el Call Center de la empresa, a más tardar en noviembre de 2012,</li><li>Mejorar los servicios y reducir los costos en 7%, a más tardar en 2015.</li></ul></span>"}
+			,{"texto":"¿Cuáles son los objetivos de aprendizaje y de crecimiento de la compañía en el corto, mediano y largo plazo?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>La perspectiva de aprendizaje y crecimiento alienta a identificar las medidas que contestan a la pregunta ¿Puede la Empresa seguir mejorando y seguir creando valor?  <Br><Br><h5>Ejemplo:</h5><br><span style=\"color:aquamarine;\"><ul><li>Retener talento (ejecutivos de ventas, desarrollo empresarial, administradores financieros, personal operativo, etc.) a un costo competitivo, dentro de los próximos 6 meses.</li><li>Entrenamiento adecuado y continuo en la formación de personal corporativo, después de evaluar las brechas de habilidades, que será realizado al final del 2o trimestre de 2012.</li><li>Garantizar que la organización entienda y esté alineada con la estrategia corporativa realizando comunicaciones corporativas dentro los primeros 15 días siguientes al final de cada trimestre.</li><li>Medir el desempeño realizando valuaciones anuales de 360 grados.</li><li>Crear incentivos claros y objetivos para los empleados que cumplan con los objetivos personales, del equipo, de la unidad de negocio correspondiente y desempeño corporativo acordado, durante el último trimestre de cada año.</li></ul></span>"}
+			,{"texto":"¿Cómo evalúan los accionistas y la alta gerencia en qué industrias debe de competir la compañía, y cómo deben competir en dichas industrias/mercados?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>Estrategia es un plan de ataque que abarca objetivos específicos para lograr la misión de la empresa, y convertirse en su fin último. La estrategia es a la vez estática y dinámica y compete dos decisiones básicas: decisiones estratégicas corporativas (en qué industrias debería la empresa competir) y decisiones estratégicas de negocio (cómo es que la empresa compite en un sector o mercado) ambas enfrentando la misma pregunta: ¿Cómo va a hacer dinero la empresa?<Br>En el análisis de los mercados e industrias en que la empresa compite actualmente y cómo se está preparando para el futuro, y cómo va a competir, reside en la respuesta de la estrategia de la empresa.  <Br><Br><h5>Ejemplo:</h5>Las estrategia comercial de la empresa es discutida al final del año, considerando la etapa de ciclo de la industria, nivel de saturación, rendimiento, las ventajas competitivas y habilidades de la empresa, el rendimiento medio en capital de la industria, y luego decisiones como la reasignación de recursos, fusiones, remover negocios/lugares de bajo desempeño, la contratación, capacitación de personal y capacidad para reorganizar la empresa son evaluados.<br><span style=\"color:aquamarine;\"></span>"}
+			,{"texto":"¿Cuáles son los 5 objetivos principales de la empresa a seguir en los siguientes tres años?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>Un objetivo es un paso concreto, una indicación, que permite lograr un fin específico. Establecer objetivos implica un proceso continuo de investigación y toma de decisiones. Conocer a la empresa es un punto de partida vital para establecer los objetivos. Los objetivos deben ser: i) centrados en un resultado, no una actividad, ii) congruentes, iii) específicos, iv) mensurables, v) relacionado a un tiempo específico, vi) alcanzables. Su uso es asegurarse de que todo el mundo dentro de la organización tenga una clara comprensión de las metas u objetivos de esa organización, así como conciencia de sus propios roles y responsabilidades para lograr esos objetivos.  <Br><Br><h5>Ejemplo:</h5>Aplicar la tecnología xxx, por el 2o trimestre de 2013 con el fin de aumentar el rendimiento de nuestras línea de producción de galletas situada en Puebla, buscando que un aumento del 10%  en la producción sea viable sin la necesidad de cualquier aumento en los costos indirecto, dentro del mismo periodo de tiempo.<Br>En julio de 2014, reducir en un 3% los defectos de producción y 2% las devoluciones.<br><span style=\"color:aquamarine;\"></span>"}
+			,{"texto":"¿Cuál es la misión de la empresa?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>El curso de acción para implementar la visión. La declaración de la misión debe ser concisa y clara. Una buena misión se destina a alinear todas las partes interesadas (propietarios, empleados, clientes, proveedores) y hacer la asignación adecuada de recursos.  <Br><Br><h5>Ejemplo:</h5>Los posibles elementos de la declaración de la misión son: i) los valores básicos, ii) clientes y/u otros interesados, iii) los productos, iv) ventaja competitiva, v) valores provistos  al cliente, vi) mercados o industrias en los que se participará.<br><span style=\"color:aquamarine;\"></span>"}
+			,{"texto":"¿Cuál es la visión de la empresa?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>Una visión es una declaración informada y orientada hacia el futuro con el propósito de definir el destino de la empresa. Una sólida visión proporciona dirección y muestra un camino a seguir. La visión de la empresa puede inspirar a todos los participantes de la empresa, cuando proporciona una clara, coherente, única y fácil  manera de entender el propósito.  <Br><Br><h5>Ejemplo:</h5>Los posibles elementos de una visión son: i) Claridad: fácil de entender, enfocada, ii) Coherencia: se mantiene constante durante un período de tiempo, pero es ajustable según las condiciones, iii) Único, ya que es especial a la empresa en cuestión y, IV) Propositivo ya que proporciona a la compañía una razón de ser.<br><span style=\"color:aquamarine;\"></span>"}
+		],
+		"D: Productos y servicios":[
+			{"texto":"¿Cuáles son los productos y servicios comercializados y cuantos clientes han sido atendidos durante los últimos 12 meses?",
+			"type":"table",
+			"vals":["Producto/Servicio","Número de clientes"],
+			"desc":""}
+			,{"texto":"¿Qué segmentos de mercado tiene la empresa como objetivo?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>Un segmento de mercado consta de un grupo con necesidades o deseos similares y puede incluir la ubicación geográfica, el poder adquisitivo, actitudes de compra. <Br><Br><h5>Ejemplo:</h5>Una empresa que comercializa sistemas de seguridad con software de rastreo de vehículos entrantes y salientes en los límites de la ciudad, puede segmentar el mercado en: municipios, aeropuertos, centros comerciales, que todos tienen preocupaciones de seguridad, pero pueden tener diferentes actitudes de compra.<br><span style=\"color:aquamarine;\"></span>"}
+			,{"texto":"¿Cuántos grupos de clientes tiene la empresa? ",
+			"type":"num",
+			"vals":[],
+			"desc":""}
+			,{"texto":"Describe las características comunes de cada grupo de clientes.",
+			"type":"table",
+			"vals":["Grupo de clientes","Características"],
+			"desc":""}
+			,{"texto":"Por favor, indique su proyección mejor informada sobre el potencial de crecimiento de clientes.",
+			"type":"table",
+			"vals":["Grupo de clientes","Últimos tres años. Tasa de Crecimiento","Año actual","Año +1","Año +2"],
+			"desc":""}
+			,{"texto":"Por favor proporcione información sobre los ingresos por línea de producto/servicio comercializado.",
+			"type":"table",
+			"vals":["Productos/Servicios","Año -2","Año -1","Año actual","% Total de ingreso"],
+			"desc":""}
+			,{"texto":"Por favor indica la estrategia de mercado por segmento objetivo para aumentar el número de clientes y para mantener los existentes.",
+			"type":"table",
+			"vals":["Grupo de clientes","Estrategia general","Iniciativas clave","Plazo (Corto/Mediano/Largo)"],
+			"desc":""}
+
+		],
+		"E: Panorama competitivo":[
+			{"texto":"Por favor responda la siguiente información sobre los competidores de la compañía:",
+			"type":"table",
+			"vals":["Compañía","Ubicación","Productos y servicios ofrecidos","Posición estimada en el mercado","Número estimado de empleados","Fortalezas y debilidades"],
+			"desc":""}
+			,{"texto":"Análisis de la cadena de valor. Por favor indica las empresas con que la compañía tiene una interrelación, ya sea porque la empresa provee insumos o porque le compran productos/servicios a la empresa.",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>\"Desde la cuna a la tumba\". El análisis de la cadena de valor ayuda a las empresas a desglosar los márgenes capturados en su segmento de la cadena y por lo tanto evalúa la mayor rentabilidad potencial, la disponibilidad de insumos críticos, facilita a la empresa a mapear su rol, dependencias y potencial de mejora desde una perspectiva financiera y operacional.  Mapear una cadena de valor requiere una adecuada desagregación de la cadena en procesos y actividades involucradas en el suministro de productos y servicios a usuarios finales; i) contratación, (ii) la transformación y, (iii) entrega de productos y servicios que implican actividades que van desde el diseño e ingeniería, extracción de materias primas y la transformación en bienes intermedios, compra de bienes intermedios para transformarlos en bienes finales, ensamble, testeo y control de calidad, ventas y marketing, distribución en un nivel mayorista, la venta a los minoristas, crédito al consumidor para facilitar compras, servicio y actividades de apoyo técnico, encuestas de satisfacción del cliente, entre otros. <Br><Br><h5>Ejemplo:</h5>La cadena de valor de un productor de refrescos está compuesta por:<br><span style=\"color:aquamarine;\">1) Suministros de acero y aluminio, 2) La compra de inventario – 3) Administración de inventarios, 4) Diseño e ingeniería, ya que distintivos diseños pueden apoyar a las actividades propias de marketing, 5) La fabricación, 6) La distribución, 7) Las ventas, 8) Servicio y Apoyo Técnico para asegurar la calidad de las latas distribuidas, 9) comprar latas, 10) Integrar las latas en el proceso de producción y llenado de ingredientes de refrescos (proveídos del productor de jarabe), 11) control de calidad, 12) inventario de jarabes, 13) distribución a los mayoristas, 14) publicidad, 15) Distribución de los mayoristas a los minoristas.</span><br>Mientras todas estas actividades podrían potencialmente hacerse internamente por la misma empresa, esto muy probablemente no será el caso. Sin embargo, ciertas actividades dentro de esta cadena de valor pueden ser muy rentables, o ser operativamente críticas para la empresa."}
+			,{"texto":"Por favor indica 2 principales clientes de la compañía y a quienes esos 2 clientes venden tu producto/servicio (transformado o “tal como es”) ",
+			"type":"open",
+			"vals":[],
+			"desc":""}
+			,{"texto":"¿Cuáles son los márgenes brutos promedio de la industria?",
+			"type":"opcional",
+			"vals":[],
+			"desc":""}
+			,{"texto":"¿Cuáles son los principales cost drivers de las compañías que compiten en la industria(s) en la que la compañía compite?",
+			"type":"opcional",
+			"vals":[],
+			"desc":""}
+			,{"texto":"Cuáles son las variables de diferenciación más importantes de la compañía que hacen o podrían hacer que los clientes prefieran el producto/servicio de la compañía sobre aquellos del competidor o proveedor o un producto/servicio substitutos. ",
+			"type":"open",
+			"vals":[],
+			"desc":"<h5>Ventajas de Costos.</h5>Economías de Escala: <ul><li> Especialización: Que evita pérdida de tiempo del cambio de actividades, asiste a la mecanización y automatización</li><li> Indivisibilidad: ciertas mercancías no están disponibles en tamaños pequeños, por lo tanto las empresas son capaces de repartir los costos sobre mayores volúmenes de producción. </li><li>  Relación técnica de insumo-producto: Es decir, aumentos de producción no requieren proporcionar aumentos de insumos.</li><li>Economías de Aprendizaje: Aumentar las habilidades individuales –aprender haciendo repetidamente-, y mejorar las rutinas –pequeños equipos montados para ejecutar tareas especiales-.</li><li>Técnicas de Producción: i) Proceso de Innovación, cuando procesos alternativos de tecnologías permiten que por cada unidad de producción se utilicen menos insumos y II) Negocio  de proceso de Re-ingeniería, tales como combinar varios puestos de trabajo en uno, el diseño flexible de procesos, adaptable a distintas situaciones, nombrar a un administrador del Proyecto para proporcionar un solo punto de contacto para vigilar las interfaces entre los procesos.</li><li>Utilización de la capacidad: Dado que mientras más costos fijos existan, se genera una sensibilidad a los aumentos o disminuciones de la demanda, aumentando los costos unitarios porque los costos fijos deben ser repartidos en menos unidades de producción, o en el caso de mayor demanda, hay una necesidad de pagar horas extras, cubrir mayores costos de mantenimiento, entre otros ejemplos.</li><li>Costos de insumos. Las empresas con mayor poder de negociación pueden tener una ventaja de costos respecto a las empresas con limitado poder de negociación con los proveedores de insumos pertinentes.</li><li>Eficiencia Residual: Tales como la capacidad de eliminar grasa organizaciónal o gastos ineficientes.</li></ul><h5>Ventajas por Diferenciación</h5>Diferenciación se extiende más allá de las características físicas del producto o servicio para abarcar todos los aspectos de la forma en que una empresa se relaciona con sus clientes. Los diferenciadores tangibles están relacionados con las características observables de un producto o servicio que son relevantes a las preferencias y procesos de elección del cliente, incluyendo factores como el desempeño, fiabilidad, consistencia, sabor, velocidad, durabilidad y seguridad. Diferenciadores Intangibles están relacionados con el status deseado, la exclusividad, la individualidad, fuentes motivacionales, imagen, servicios complementarios como crédito, entrega ágiles, reparación, reputación, conocimiento de las características del producto o servicio ofrecido, entre otros."}
+			
+		],
+		"F: Ventas":[
+			{"texto":"¿La empresa tiene una estrategia  o metodología para sus esfuerzos de ventas?",
+			"type":"open",
+			"vals":[],
+			"desc":"<span style=\"color:aliceblue;\"></span> <h5>Descripción:</h5>Un plan de ventas incluye temas tales como el proceso de venta (identificar prospectos, hacer un contacto inicial y establecer una primera relación, evaluar las necesidades para hacer la oferta correcta, acentuar las razones de por qué el producto o servicio ofrecido será óptimp resolviendo esas necesidades haciendo una presentación completa de la solución, preguntar por la orden, confirmar la orden, y una continua comunicación dentro de la compañía para garantizar que la oferta vendida sea cumplida en los términos prometidos.<Br>Un plan de ventas también incluye cantidades y precios a los que los diferentes productos y servicios serán vendidos, descontados, promocionados, venta cruzada y venta de productos adicionales a los mismos clientes.<Br>Además, la definición de si una fuerza de ventas directa será utlizada, o si canales (distribuidores), aliados y representantes de ventas independientes se integrarán la fuerza de ventas. Esta definición también evalúa las ventajas y las desventajas de apoyar las ventas con los vendedores de la empresa, así como las ventajas y desventajas del esfuerzo de los representantes independientes.<Br>Incentivos de diseño adecuados son críticos en un plan de ventas, así como un monitoreo y evaluación cercano del desempeño de la fuerza de ventas.<Br>Además, un buen diseño del plan de ventas, incluye revisión periódica y controles específicos y equilibrio con el mercado para proporcionar retroalimentación a la organización  y asegurar que la oferta sea adecuada; así como dentro de la organización, a fin de garantizar que los recursos son utilizados adecuadamente (evitando compras inadecuadas, fabricación, sobre- inventarios, pago de horas extras, etc. <Br><Br><h5>Ejemplo:</h5>Una metodología para la fuerza de ventas puede incluir la implementación y un uso adecuado del software de ventas, fácilmente disponibles en el mercado.<br><span style=\"color:aquamarine;\">"}
+			,{"texto":"Pronóstico de Ventas",
+			"type":"table",
+			"vals":["Producto/Servicio","Año actual","Año +1","Año +2","Año +3"],
+			"desc":""}
+		],
+		"G: Resumen Organizacional":[
+			{"texto":"Alta dirección",
+			"type":"table",
+			"vals":["Nombre","Posición"],
+			"desc":""}
+			,{"texto":"Por favor llene los espacios en blanco.",
+			"type":"form",
+			"vals":[],
+			"desc":""}
+			,{"texto":"Por favor indique cuantos empleados tiene la compañía.",
+			"type":"num",
+			"vals":[],
+			"desc":""}
+		]
+
+	}
+}

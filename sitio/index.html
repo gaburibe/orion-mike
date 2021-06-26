@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>RUV demo</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+</head>
+<style type="text/css">
+@font-face {
+    font-family: neutra;
+    src: url("fonts/neutra.otf") format("opentype");
+}
+@font-face {
+    font-family: neutra;
+    src: url("fonts/cherokee.ttf") format("truetype");
+}
+  .bg-primary {
+    background-color: darkgrey !important;
+}
+.tenis{
+  background: url(img/banner.png);
+  background-size: 30vh;
+}
+.shadow{
+  -webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.75) !important;
+background-color: white;
+}
+.shadow2{
+box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.15) !important;
+background-color: black;
+}
+.cherry{
+  background-color: #ffffff75;
+  color:black;
+}
+#services{
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+}
+body{
+  background-color: whitesmoke;
+  /*font-family: "neutra";*/
+  background: url(img/banner.png);
+  background-size: 30vh;
+}
+.gradient{
+background: url(img/banner.png);
+  background-size: 30vh;
+    margin-top: 60px;
+
+}
+textarea{
+  min-height: 250px;
+  background-color: rgb(207 207 207); !important;
+  border-radius: 15px;
+}
+input{
+  background-color: rgb(207 207 207); !important;
+  border-radius: 15px;
+
+}
+fresco{
+  color: #007bfe;
+  width: 100%;
+  color:black;
+  text-align: left;
+}
+.descripcion{
+  text-align: center;
+ /* background-color: rgba(0,0,0,.5);*/
+}
+.pregunta{
+  color: black;
+  
+  text-align: center;
+}
+.respuesta{
+    background-color: rgb(207 207 207);
+    color: #373737;
+    /*border: 1px solid white;*/
+}
+
+.bg-dark{
+  background-color: white !important;
+      height: 70px;
+}
+.pregunta{
+  margin:5px;
+  padding:4px;
+  text-align: center;
+  background-color: white;
+  font-size: 30pt;
+  
+}
+.pnum{
+  font-size: 30px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.pnum:hover{
+  text-decoration: underline;
+
+}
+.pnumselected{
+  /*color:blue;*/
+  border:1px solid grey;
+}
+section {
+    padding: 10px 0;
+}
+select{
+  font-size: 28px;
+}
+header {
+     padding: 0px 0 100px !important; 
+}
+.whitefix{
+  position:absolute;
+  width:99vw;
+  height:70px;
+  z-index: 0;
+  background-color: white;
+}
+.overdivtitle{
+
+ height: 70px;
+    /*width: 83%;*/
+    font-size: 15pt;
+    text-align: center;
+    padding-top: 15px;
+    /*margin-left: 8%;*/
+    color:white;
+}
+.overdiv{
+  margin-top: 70px;
+  background-color: black;
+  padding: 0px;
+}
+.overdivchild{
+  padding-top:50px;
+  padding-left:50px;
+  padding-right:50px;
+  background-color: white;
+  width:100%;
+  min-height:80vh;
+  color:black;
+  font-family: monospace;
+}
+input{
+  background-color: rgb(207 207 207);
+  text-align: center;
+      width: 110px;
+      
+}
+select.respuesta{
+  background-color: rgb(207 207 207) !important;
+  font-size: 11px !important;
+}
+textarea.respuesta{
+  background-color: rgb(207 207 207) !important;
+}
+.selectpicker{
+  background-color: #00000000;
+    color: black;
+    border: solid black;
+}
+.phase1{
+  /*display:none;*/
+}
+.phase2{
+  display:none;
+}
+.progress-bar{
+  background-color: #5ea1e9 !important;
+}
+#caratula {
+  background: url("");
+  border:1px solid black;
+  background-size: cover;
+  width: 800px;
+  height: 400px;
+  position: relative;
+  /*display:none;*/
+}
+.h3, h3 {
+    font-size: 14pt;
+    font-family: monospace;
+    color:steelblue;
+}
+</style>
+<body id="page-top">
+  <div id="registeredname" style="display:none"></div>
+  <!-- Navigation -->
+  <nav style="color:black;background-color: transparent;" class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" style="height: 125px;" href="" target="_blank"><img style="height: 45px;margin-top: 30px;" src="img/logoruv.png"></a>
+      
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" style="color:black;" href="#currentQ">V 0.1</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="whitefix phase1" >
+    <div class="overdivtitle container" style="color:black;background-color: transparent;border: solid black;">Demo Cuestionario RUV</div>
+
+  </div>
+  <div class="whitefix phase2">
+    <div class="overdivtitle container" style="background-color: transparent;border: solid black;" >
+      <!-- <img src="img/save.png" style="display:none;" onclick="save()" style="width:50px;">
+              <button onclick="save()">Guardar</button> -->
+
+      <select class="selectpicker" id="seccionesmenu"></select>
+
+    </div>
+  </div>
+  <header class="bg-primary text-white tenis" id="head">
+    <div class="overdiv container text-center">
+        
+        <div class="overdivchild">
+          <h3></h3>
+
+          
+          <br><br>
+          <h5>El cuestionario guarda las respuestas automaticamente cada que se cambia la pregunta.  </h5>
+          <br>
+          <h3>Nombre del evaluador</h3>
+          <input type="text" class="form-control" id="evaluador" aria-describedby="emailHelp" placeholder="">
+            <br>
+          <h3>Nombre del participante</h3>
+          <input type="text" class="form-control" id="participante" aria-describedby="emailHelp" placeholder="">
+            <br>
+          <h3>Fecha (dd/mm/yyyy)</h3>
+          <input type="text" class="form-control" id="fecha" aria-describedby="emailHelp" placeholder="">
+          <div class="form-group">
+            <!-- <label style="color:black;" for="exampleInputEmail1">Clave de acceso</label> -->
+            
+            <button type="button" onclick="getquest()" class="btn btn-primary">Comenzar</button>
+            <!-- <small id="emailHelp" class="form-text text-muted">Copia y pega tu código de acceso.</small> -->
+          </div>
+
+        </div>
+    </div>
+    
+  </header>
+
+  <div class="overdiv container text-center phase2">
+        
+        <div class="overdivchild">
+          <div class="row">
+            
+            <!-- <div class="col-lg-4">
+              <img src="img/save.png" style="display:none;" onclick="save()" style="width:50px;">
+              <button onclick="save()">Guardar</button>
+            </div> -->
+          </div>
+          <hr>
+          <div id="caratula"></div>
+          <!-- <div id="currentQ"></div> -->
+        </div>
+
+  </div>      
+   
+ 
+        
+  
+
+
+
+  
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark" style="background-color: black !important;">
+    <div class="container" >
+      <p class="m-0 text-center text-white">  &copy;  ORION</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+</body>
+
+<script type="text/javascript">
+
+var _MENU={};
+$(document).ready(function(){
+  console.log("READY")
+});
+
+
+$( "#seccionesmenu" ).change(function() {
+  refresh();
+
+  selected=$( "#seccionesmenu" ).val();
+  gotoQ(selected)
+});
+function refresh(){
+  seccion=$( "#seccionesmenu option:selected" ).text();
+  counter=0;
+  total=0;
+  for(i=0;i<_MENU[seccion].length;i++){
+    total+=1;
+    if (_MENU[seccion][i].respuesta){
+      counter+=1;
+    }
+  }
+  // $(".progress-bar").attr("style","width: "+(counter*100/total)+"%" );
+  // $(".progress-bar").html( Math.round(counter*100/total)+"%" );
+  // console.log("progress",counter/total,_MENU[seccion]);
+  // console.log(seccion,"---")
+  // $("#pcontainer").html("");
+  respind=""
+  for (var i = 0; i < _MENU[seccion].length; i++){
+      if(_MENU[seccion][i].respuesta){
+        respind='style="color:darkcyan;"'
+      }
+      else{
+        respind=''
+      }
+            $("#pcontainer").append('<span class="pnum" '+respind+' num="'+i+'" onclick="gotoQ('+i+')">  '+i+'  </span>')
+  }
+}
+function gotoQ(i){
+  
+  seccion=$( "#seccionesmenu option:selected" ).text();
+
+  refresh();
+   despliegaQ(seccion,i)
+   console.log("gotoQ",seccion,i);
+   save();
+}
+function despliegaQ(sec,num){
+  idlab=sec.split(":");
+  quest=typestr(_MENU[sec],sec+"|"+num,sec+"|"+num);
+  console.log("quest",quest);
+  
+    $("#caratula").html(quest);
+
+    
+}
+function typestr(objeto,id,label){
+  console.log("objeto",objeto)
+  Rstr="";
+  if(objeto.type=="caratula"){
+    console.log("caratula!")
+    $("#caratula").css("background","url("+objeto.caratula+")");
+    $("#caratula").css("background-size","cover");
+    for(i=0;i<objeto.inputs.length;i++){
+      label=id+"|"+i;
+      pr=objeto.inputs[i];
+      console.log(pr,i,"tipo")
+      console.log("inputs",objeto.inputs[i].type)
+      if(pr.type=="select"){
+        Rstr+='<select style="position: absolute;\
+        top:'+pr.position[1]+'px;\
+        left: '+pr.position[0]+'px;\
+        width: 220px;\
+        " label="'+label+'" id="'+id+"|"+i+'" class="form-control respuesta select"><option disabled selected value> -- selecciona una opcion -- </option>';
+        for (var j = 0; j < pr.vals.length; j++) {
+          selected="";
+          if(pr.respuesta.toLowerCase()==pr.vals[j].toLowerCase()){selected="selected"; }
+          Rstr+='<option class="" value="'+pr.vals[j].toLowerCase()+'" '+selected+'>'+pr.vals[j]+'</option>';
+        }
+        Rstr+='</select>';
+      }
+      if(pr.type=="radio"){
+
+        Rstr+='<fieldset  style="position: absolute;\
+        top:'+pr.position[1]+'px;\
+        left: '+pr.position[0]+'px;\
+        background-color:transparent;border:0px;\
+        width: 324px;\
+        " label="'+label+'" id="'+id+"|"+i+'" class="form-control  radio">';
+        for (var j = 0; j < pr.vals.length; j++) {
+          checked="";
+          if(pr.respuesta.toLowerCase()==pr.vals[j].toLowerCase()){checked="checked"; }
+          Rstr+='<input label="'+label+'" class="respuesta inradio" type="radio" name="'+label+'" value="'+pr.vals[j]+'" '+checked+'> '+pr.vals[j];
+        }
+        Rstr+='</fieldset>';
+      }
+      if(pr.type=="text"){
+        Rstr+='<input type="text" value="'+pr.respuesta+'" style="position: absolute;\
+        top:'+pr.position[1]+'px;\
+        left: '+pr.position[0]+'px;\
+        width: 200px;height:25px;\
+        " label="'+label+'" id="'+id+"|"+i+'" class="form-control respuesta select">';
+        Rstr+='</input>';
+      }
+      if(pr.type=="checkbox"){
+        checked="";
+        if(pr.respuesta=="SI"){checked="checked"}
+        Rstr+='<input label="'+label+'" type="checkbox" style="position: absolute;\
+        top:'+pr.position[1]+'px;\
+        left: '+pr.position[0]+'px;width:20px;\
+        " label="'+label+'" id="'+id+"|"+i+'" class="form-control incheckbox respuesta select" '+checked+'>';
+        Rstr+='</input>';
+      }
+    }
+  }
+  
+  return Rstr;
+}
+
+
+function getquest(){
+  // $('#evaluador').val(this.value.toLowerCase().replace(/\s/g, ''));
+  name=$('#participante').val().toLowerCase().replace(/\s/g, '');
+  $("#registeredname").html(name);
+  $.ajax({
+        url: 'http://localhost:2121/menu',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({"name":name}),
+        dataType: 'json',
+        error: function(xhr, status, error) {
+          console.log(xhr, status, error);
+          $("#console").html("No se pudo salvar");
+          //alert(xhr.responseText);
+        },
+        success: function (data){
+          $(".phase1").hide();
+        $(".phase2").show();
+          console.log("data",data)
+          _MENU=data;
+          //console.log(_MENU)
+          for(secc in _MENU){
+              $("#seccionesmenu").append('<option value="'+secc+'">'+secc+'</option>');
+              
+            }
+            //refresh()
+            despliegaQ("P:1",0);
+            gotoQ(0)
+          
+        }
+    });
+  hidepass();
+}
+function hidepass(){
+  $("#head").hide("slow");
+}
+respcount=0;
+
+$(document).on('change', '.respuesta', function () {
+    vv=$(this).val();
+    element=$(this);
+    console.log("change",vv);
+    updateAwnser(element,vv);
+    refresh()
+});
+function updateAwnser(element, vv){
+  console.log(element.attr("label"));
+  id=element.attr("label");
+  ids=id.split("|");
+  if(element.is(".incheckbox")){
+      if (element.is(":checked")){vv="SI";}
+      else{ vv="NO"; }
+      
+      
+      console.log("changingCheck",vv)
+  }
+  if(element.is(".inradio")){
+    
+      radioValue = $("input[name='"+id+"']:checked").val();
+      vv=radioValue;
+      console.log("changingRadio",vv)
+  }
+  else{
+    console.log("changing",vv)
+  }
+  //console.log(ids)
+  _MENU[ids[0]].inputs[ids[2]]["respuesta"]=vv;
+  pregunta=_MENU[ids[0]].inputs[ids[2]];
+
+  console.log("changed MENU",_MENU)
+
+}
+
+function save(){
+  name2save=$("#registeredname").html();
+  $.ajax({
+        url: 'http://localhost:2121/saveprogress',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({"name":name2save,"cuestionario":_MENU}),
+        dataType: 'json',
+        error: function(xhr, status, error) {
+          console.log(xhr, status, error);
+          $("#console").html("No se pudo salvar");
+          //alert(xhr.responseText);
+        },
+        success: function (data){
+          console.log("data")
+          
+          
+        }
+    });
+}
+function reset(){
+  console.log(_MENU);
+  name2save=$("#registeredname").html("new");
+  for (seccion in _MENU){
+    for(i=0;i<_MENU[seccion].length;i++){
+      _MENU[seccion][i].respuesta="";
+    }
+  }
+  save();
+}
+</script>
+</html>
