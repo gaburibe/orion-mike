@@ -3,11 +3,21 @@ var app = express();
 const cors = require('cors')
 var bodyParser = require('body-parser')
 const dotenv = require('dotenv');
+var path = require('path');
+var PizZip = require('pizzip');
+var Docxtemplater = require('docxtemplater');
+var fs = require("fs");
+DICCIONARIO={};
+var content = fs
+    .readFileSync(path.resolve(__dirname, 'templates/prueba.docx'), 'binary');
+
+var zip = new PizZip(content);
+
+var doc = new Docxtemplater();
+doc.loadZip(zip);
+
+
 dotenv.config();
-
-
-
-
 
 
 const readline = require('readline');
@@ -88,8 +98,74 @@ app.post("/saveprogress", function(req,res){
 	});
 	console.log(name,"cuestionario")
 })
+app.post('/makedoc', function (req, res) {
+		cuest=req.body["cuestionario"];
+		console.log(cuest)
+		fs.readFile('cuestionarios/demo.json', (err, data) => {
+		    if (err) throw err;
+		    let cuest = JSON.parse(data);
+		    
+		    respuestas={
+		    	evaluador:cuest.metadata.evaluador, 
+		    	participante:cuest.metadata.participante,
+		    	fecha:cuest.metadata.fecha,
+		    	p1:cuest["evaluación"]["inputs"][0]["respuesta"],
+		    	p2:cuest["evaluación"]["inputs"][1]["respuesta"]
+		    };
+		    // for(categoria in cuest){
+		    // 	for(i=0;i<cuest[categoria].length;i++){
+		    // 		categoriaT=categoria.split(":");
+		    // 		respuestas[categoriaT[0]+"-"+i]=cuest[categoria][i].respuesta;
+		    // 	}
+		    // }
+		    console.log(respuestas);
+		    writeTemplate(respuestas,"reporteDemo");
+		    res.json({link:"/bandeja/reporteDemo.docx"});
+		})
 
 
+});
+
+meses={
+	"01":"enero",
+	"02":"febrero",
+	"03":"marzo",
+	"04":"abril",
+	"05":"mayo",
+	"06":"junio",
+	"07":"julio",
+	"08":"agosto",
+	"09":"septiembre",
+	"10":"octubre",
+	"11":"noviembre",
+	"12":"diciembre",
+}
+function writeTemplate(obj,name){
+	//set the templateVariables
+	doc.setData(obj);
+
+	try {
+	    // render the document (replace all occurences of {first_name} by John, {last_name} by Doe, ...)
+	    doc.render()
+	}
+	catch (error) {
+	    var e = {
+	        message: error.message,
+	        name: error.name,
+	        stack: error.stack,
+	        properties: error.properties,
+	    }
+	    console.log(JSON.stringify({error: e}));
+	    // The error thrown here contains additional information when logged with JSON.stringify (it contains a property object).
+	    throw error;
+	}
+
+	var buf = doc.getZip()
+	             .generate({type: 'nodebuffer'});
+
+	// buf is a nodejs buffer, you can either write it to a file or do anything else with it.
+	fs.writeFileSync(path.resolve(__dirname, "bandeja/"+name+'.docx'), buf);
+}
 
 
 //PUERTO

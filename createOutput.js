@@ -9,7 +9,7 @@ DICCIONARIO={};
 
 //Load the docx file as a binary
 var content = fs
-    .readFileSync(path.resolve(__dirname, 'output.docx'), 'binary');
+    .readFileSync(path.resolve(__dirname, 'templates/prueba.docx'), 'binary');
 
 var zip = new PizZip(content);
 
@@ -31,16 +31,16 @@ meses={
 	"12":"diciembre",
 }
 
-fs.readFile('cuestionarios2/respondedbiossman.json', (err, data) => {
+fs.readFile('cuestionarios/new.json', (err, data) => {
     if (err) throw err;
     let cuest = JSON.parse(data);
-    respuestas={};
-    for(categoria in cuest){
-    	for(i=0;i<cuest[categoria].length;i++){
-    		categoriaT=categoria.split(":");
-    		respuestas[categoriaT[0]+"-"+i]=cuest[categoria][i].respuesta;
-    	}
-    }
+    respuestas={evaluador:"evaluador", participante:"participante",fecha:"4/julio/2021"};
+    // for(categoria in cuest){
+    // 	for(i=0;i<cuest[categoria].length;i++){
+    // 		categoriaT=categoria.split(":");
+    // 		respuestas[categoriaT[0]+"-"+i]=cuest[categoria][i].respuesta;
+    // 	}
+    // }
     console.log(respuestas);
     writeTemplate(respuestas,"doc");
 })

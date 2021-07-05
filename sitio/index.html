@@ -232,11 +232,13 @@ textarea.respuesta{
   </div>
   <div class="whitefix phase2">
     <div class="overdivtitle container" style="background-color: transparent;border: solid black;" >
-      <!-- <img src="img/save.png" style="display:none;" onclick="save()" style="width:50px;">
-              <button onclick="save()">Guardar</button> -->
+      <img src="img/save.png" style="display:none;" onclick="makedoc()" style="width:50px;">
+              
 
       <select class="selectpicker" id="seccionesmenu"></select>
 
+      <button onclick="makedoc()">Generar Resumen</button>
+      <a id="download" ></a>
     </div>
   </div>
   <header class="bg-primary text-white tenis" id="head">
@@ -250,13 +252,13 @@ textarea.respuesta{
           <h5>El cuestionario guarda las respuestas automaticamente cada que se cambia la pregunta.  </h5>
           <br>
           <h3>Nombre del evaluador</h3>
-          <input type="text" class="form-control" id="evaluador" aria-describedby="emailHelp" placeholder="">
+          <input value="demo" type="text" class="form-control" id="evaluador" aria-describedby="emailHelp" placeholder="">
             <br>
           <h3>Nombre del participante</h3>
-          <input type="text" class="form-control" id="participante" aria-describedby="emailHelp" placeholder="">
+          <input type="text" class="form-control" id="participante" aria-describedby="emailHelp" value="demo">
             <br>
           <h3>Fecha (dd/mm/yyyy)</h3>
-          <input type="text" class="form-control" id="fecha" aria-describedby="emailHelp" placeholder="">
+          <input type="text" class="form-control" id="fecha" aria-describedby="emailHelp" value="dd/mm/yyyy">
           <div class="form-group">
             <!-- <label style="color:black;" for="exampleInputEmail1">Clave de acceso</label> -->
             
@@ -276,7 +278,7 @@ textarea.respuesta{
             
             <!-- <div class="col-lg-4">
               <img src="img/save.png" style="display:none;" onclick="save()" style="width:50px;">
-              <button onclick="save()">Guardar</button>
+              <button onclick="makedoc()">Guardar</button>
             </div> -->
           </div>
           <hr>
@@ -384,6 +386,9 @@ function typestr(objeto,id,label){
       pr=objeto.inputs[i];
       console.log(pr,i,"tipo")
       console.log("inputs",objeto.inputs[i].type)
+      if(pr.texto){console.log("text"); Rstr+='<p class="pr" style="position: absolute;\
+        top:'+(parseFloat(pr.position[1]) -100)+'px;\
+        left: '+pr.position[0]+'px;"\>'+pr.texto+'</p>'};
       if(pr.type=="select"){
         Rstr+='<select style="position: absolute;\
         top:'+pr.position[1]+'px;\
@@ -441,7 +446,7 @@ function getquest(){
   name=$('#participante').val().toLowerCase().replace(/\s/g, '');
   $("#registeredname").html(name);
   $.ajax({
-        url: 'http://199.244.51.123:2121/menu',
+        url: 'http://localhost:2121/menu',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({"name":name}),
@@ -462,7 +467,7 @@ function getquest(){
               
             }
             //refresh()
-            despliegaQ("P:1",0);
+            despliegaQ("Info",0);
             gotoQ(0)
           
         }
@@ -510,9 +515,14 @@ function updateAwnser(element, vv){
 }
 
 function save(){
+  metadata={evaluador:"-",participante:"-",fecha:"-"}
+  metadata.evaluador=$("#evaluador").val();
+  metadata.participante=$("#participante").val();
+  metadata.fecha=$("#fecha").val();
+  _MENU.metadata=metadata;
   name2save=$("#registeredname").html();
   $.ajax({
-        url: 'http://199.244.51.123:2121/saveprogress',
+        url: 'http://localhost:2121/saveprogress',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({"name":name2save,"cuestionario":_MENU}),
@@ -523,9 +533,32 @@ function save(){
           //alert(xhr.responseText);
         },
         success: function (data){
-          console.log("data")
-          
-          
+          console.log("data")    
+        }
+    });
+}
+function makedoc(){
+  metadata={evaluador:"-",participante:"-",fecha:"-"}
+  metadata.evaluador=$("#evaluador").val();
+  metadata.participante=$("#participante").val();
+  metadata.fecha=$("#fecha").val();
+  _MENU.metadata=metadata;
+  name2save=$("#registeredname").html();
+  $.ajax({
+        url: 'http://localhost:2121/makedoc',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({"name":name2save,"cuestionario":_MENU}),
+        dataType: 'json',
+        error: function(xhr, status, error) {
+          console.log(xhr, status, error);
+          $("#console").html("No se pudo salvar");
+          //alert(xhr.responseText);
+        },
+        success: function (data){
+          $("#download").attr("href",data.link);
+          $("#download").html("Descargar")
+          console.log(data)    
         }
     });
 }

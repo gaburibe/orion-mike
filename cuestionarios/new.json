@@ -29,12 +29,20 @@
 		"respuesta": ""
 	},
 	"P:2": {
-		"caratula": "caratulas/c2.png",
+		"caratula": "null",
 		"type": "caratula",
 		"inputs": [{
-			"type": "text",
-			"position": [185, 120],
-			"respuesta": "-"
+			"type": "radio",
+			"vals": ["Verdadero", "Falso"],
+			"position": [25, 130],
+			"respuesta": "-",
+			"texto":"Pregunta 1. Para la ubicación geográfica del domicilio de la Empresa, la “Latitud” se registra en negativo y la “Longitud” en positivo.<br> (Ejemplo: Latitud - 19.3607061, Longitud 99.1895834)"
+		},{
+			"type": "radio",
+			"vals": ["Verdadero", "Falso"],
+			"position": [25, 300],
+			"respuesta": "-",
+			"texto":"Pregunta 2. El Poder Notarial es un documento obligatorio para las Personas Físicas que se registran en RUV"
 		}]
 	},
 	"P:3": {
