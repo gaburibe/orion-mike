@@ -203,13 +203,14 @@ textarea.respuesta{
     font-family: monospace;
     color:steelblue;
 }
+
 </style>
 <body id="page-top">
   <div id="registeredname" style="display:none"></div>
   <!-- Navigation -->
   <nav style="color:black;background-color: transparent;" class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" style="height: 125px;" href="" target="_blank"><img style="height: 45px;margin-top: 30px;" src="img/logoruv.png"></a>
+    <div class="container" >
+      <a class="navbar-brand js-scroll-trigger" style="height: 125px;" href="" target="_blank"><img style="height: 45px;margin-top: 30px;" src="img/logotext.png"></a>
       
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -227,7 +228,7 @@ textarea.respuesta{
     </div>
   </nav>
   <div class="whitefix phase1" >
-    <div class="overdivtitle container" style="color:black;background-color: transparent;border: solid black;">Demo Cuestionario RUV</div>
+    <div class="overdivtitle container" style="color: white;background-color: royalblue;">Demo Cuestionario RUV</div>
 
   </div>
   <div class="whitefix phase2">
@@ -446,7 +447,7 @@ function getquest(){
   name=$('#participante').val().toLowerCase().replace(/\s/g, '');
   $("#registeredname").html(name);
   $.ajax({
-        url: 'http://199.244.51.123:2121/menu',
+        url: 'http://localhost:2121/menu',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({"name":name}),
@@ -522,7 +523,7 @@ function save(){
   _MENU.metadata=metadata;
   name2save=$("#registeredname").html();
   $.ajax({
-        url: 'http://199.244.51.123:2121/saveprogress',
+        url: 'http://localhost:2121/saveprogress',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({"name":name2save,"cuestionario":_MENU}),
@@ -545,7 +546,7 @@ function makedoc(){
   _MENU.metadata=metadata;
   name2save=$("#registeredname").html();
   $.ajax({
-        url: 'http://199.244.51.123:2121/makedoc',
+        url: 'http://localhost:2121/makedoc',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({"name":name2save,"cuestionario":_MENU}),

@@ -110,20 +110,17 @@ app.post('/makedoc', function (req, res) {
 		    	participante:cuest.metadata.participante,
 		    	fecha:cuest.metadata.fecha,
 		    	p1:cuest["evaluación"]["inputs"][0]["respuesta"],
-		    	p2:cuest["evaluación"]["inputs"][1]["respuesta"]
+		    	p2:cuest["evaluación"]["inputs"][1]["respuesta"],
+		    	regimenfiscal:cuest["Info"]["inputs"][1]["respuesta"],
+		    	legalagreement:cuest["Info"]["inputs"][4]["respuesta"],
+		    	correo:cuest["Info"]["inputs"][2]["respuesta"]
+
 		    };
-		    // for(categoria in cuest){
-		    // 	for(i=0;i<cuest[categoria].length;i++){
-		    // 		categoriaT=categoria.split(":");
-		    // 		respuestas[categoriaT[0]+"-"+i]=cuest[categoria][i].respuesta;
-		    // 	}
-		    // }
+
 		    console.log(respuestas);
-		    writeTemplate(respuestas,"reporteDemo");
-		    res.json({link:"/bandeja/reporteDemo.docx"});
+		    writeTemplate(respuestas,cuest.metadata.evaluador+"-"+cuest.metadata.participante);
+		    res.json({link:"/bandeja/"+cuest.metadata.evaluador+"-"+cuest.metadata.participante+".docx"});
 		})
-
-
 });
 
 meses={
