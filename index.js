@@ -101,11 +101,7 @@ app.post("/saveprogress", function(req,res){
 app.post('/makedoc', function (req, res) {
 		cuest=req.body["cuestionario"];
 		console.log(cuest)
-		fs.readFile('cuestionarios/demo.json', (err, data) => {
-		    if (err) throw err;
-		    let cuest = JSON.parse(data);
-		    
-		    respuestas={
+		respuestas={
 		    	evaluador:cuest.metadata.evaluador, 
 		    	participante:cuest.metadata.participante,
 		    	fecha:cuest.metadata.fecha,
@@ -120,7 +116,6 @@ app.post('/makedoc', function (req, res) {
 		    console.log(respuestas);
 		    writeTemplate(respuestas,cuest.metadata.evaluador+"-"+cuest.metadata.participante);
 		    res.json({link:"/bandeja/"+cuest.metadata.evaluador+"-"+cuest.metadata.participante+".docx"});
-		})
 });
 
 meses={
