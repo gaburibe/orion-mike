@@ -42,7 +42,10 @@ app.use('/', express.static(__dirname + '/sitio'));
 app.use('/bandeja/', express.static(__dirname + '/bandeja'));
 app.use('/ordenes/', express.static(__dirname + '/ordenes'));
 app.use('/archivo/', express.static(__dirname + '/archivo'));
-
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store')
+  next()
+})
 const corsOptions = {
   origin: 'http://localhost:2121'
 }
