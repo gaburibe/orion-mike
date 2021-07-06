@@ -117,8 +117,8 @@ app.post('/makedoc', function (req, res) {
 		    };
 
 		    console.log(respuestas);
-		    writeTemplate(respuestas,cuest.metadata.evaluador+"-"+cuest.metadata.participante);
-		    res.json({link:"/bandeja/"+cuest.metadata.evaluador+"-"+cuest.metadata.participante+".docx"});
+		    writeTemplate("bandeja/demo.docx");
+		    res.json({link:"bandeja/demo.docx"});
 });
 
 meses={
