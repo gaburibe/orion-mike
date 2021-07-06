@@ -117,7 +117,7 @@ app.post('/makedoc', function (req, res) {
 		    };
 
 		    console.log(respuestas);
-		    writeTemplate("bandeja/demo.docx");
+		    writeTemplate(respuestas,"bandeja/demo.docx");
 		    res.json({link:"bandeja/demo.docx"});
 });
 
