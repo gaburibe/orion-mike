@@ -8,13 +8,7 @@ var PizZip = require('pizzip');
 var Docxtemplater = require('docxtemplater');
 var fs = require("fs");
 DICCIONARIO={};
-var content = fs
-    .readFileSync(path.resolve(__dirname, 'templates/prueba.docx'), 'binary');
 
-var zip = new PizZip(content);
-
-var doc = new Docxtemplater();
-doc.loadZip(zip);
 
 
 dotenv.config();
@@ -102,6 +96,12 @@ app.post("/saveprogress", function(req,res){
 	console.log(name,"cuestionario")
 })
 app.post('/makedoc', function (req, res) {
+
+	var content = fs.readFileSync(path.resolve(__dirname, 'templates/prueba.docx'), 'binary');
+	var zip = new PizZip(content);
+	var doc = new Docxtemplater();
+	doc.loadZip(zip);
+
 		cuest=req.body["cuestionario"];
 		console.log(cuest)
 		respuestas={
@@ -117,8 +117,10 @@ app.post('/makedoc', function (req, res) {
 		    };
 
 		    console.log(respuestas);
-		    writeTemplate(respuestas,"bandeja/demo.docx");
-		    res.json({link:"bandeja/demo.docx"});
+		    writeTemplate(respuestas,"bandeja/demo.docx",function(){
+		    	res.json({link:"bandeja/demo.docx"});
+		    });
+		    
 });
 
 meses={
@@ -135,7 +137,12 @@ meses={
 	"11":"noviembre",
 	"12":"diciembre",
 }
-function writeTemplate(obj,name){
+function writeTemplate(obj,name,callback){
+	var content = fs.readFileSync(path.resolve(__dirname, 'templates/prueba.docx'), 'binary');
+	var zip = new PizZip(content);
+	var doc = new Docxtemplater();
+	doc.loadZip(zip);
+
 	//set the templateVariables
 	doc.setData(obj);
 
@@ -160,6 +167,7 @@ function writeTemplate(obj,name){
 
 	// buf is a nodejs buffer, you can either write it to a file or do anything else with it.
 	fs.writeFileSync(path.resolve(__dirname, "bandeja/demo.docx"), buf);
+	callback();
 }
 
 

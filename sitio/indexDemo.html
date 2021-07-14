@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>RUV Preguntas</title>
+  <title>RUV demo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -161,7 +161,6 @@ header {
   min-height:80vh;
   color:black;
   font-family: monospace;
-  text-align: left;
 }
 input{
   background-color: rgb(207 207 207);
@@ -221,7 +220,7 @@ textarea.respuesta{
         <ul class="navbar-nav ml-auto">
           
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" style="color:black;" href="#currentQ">V 1.1</a>
+            <a class="nav-link js-scroll-trigger" style="color:black;" href="#currentQ">V 0.1</a>
           </li>
           
         </ul>
@@ -229,7 +228,7 @@ textarea.respuesta{
     </div>
   </nav>
   <div class="whitefix phase1" >
-    <div class="overdivtitle container" style="color: white;background-color: royalblue;">Demo Preguntas RUV</div>
+    <div class="overdivtitle container" style="color: white;background-color: royalblue;">Demo Cuestionario RUV</div>
 
   </div>
   <div class="whitefix phase2">
@@ -238,7 +237,7 @@ textarea.respuesta{
               
 
       <select class="selectpicker" id="seccionesmenu"></select>
-      <select class="selectpicker" id="preguntas"></select>
+
       <button onclick="makedoc()">Generar Resumen</button>
       <a id="download" ></a>
     </div>
@@ -257,7 +256,7 @@ textarea.respuesta{
           <input value="demo" type="text" class="form-control" id="evaluador" aria-describedby="emailHelp" placeholder="">
             <br>
           <h3>Nombre del participante</h3>
-          <input type="text" class="form-control" id="participante" aria-describedby="emailHelp" value="preguntas">
+          <input type="text" class="form-control" id="participante" aria-describedby="emailHelp" value="demo">
             <br>
           <h3>Fecha (dd/mm/yyyy)</h3>
           <input type="text" class="form-control" id="fecha" aria-describedby="emailHelp" value="dd/mm/yyyy">
@@ -321,35 +320,19 @@ textarea.respuesta{
 <script type="text/javascript">
 
 var _MENU={};
-var _CODES=["a","b","c","d","e","f","g"]
 $(document).ready(function(){
   console.log("READY")
 });
 
 
 $( "#seccionesmenu" ).change(function() {
-   
   refresh();
 
   selected=$( "#seccionesmenu" ).val();
-  
-  gotoQ(0)
-});
-$( "#preguntas" ).change(function() {
-  //refresh();
-
-  selected=$( "#preguntas" ).val();
-  
   gotoQ(selected)
 });
 function refresh(){
-  $("#preguntas").html("");
   seccion=$( "#seccionesmenu option:selected" ).text();
- 
-  objeto=_MENU[seccion];
-  for (var i = 0; i < objeto.length; i++) {
-    $("#preguntas").append('<option value="'+i+'">'+i+'</option>');    
-  }
   counter=0;
   total=0;
   for(i=0;i<_MENU[seccion].length;i++){
@@ -377,46 +360,84 @@ function refresh(){
 function gotoQ(i){
   
   seccion=$( "#seccionesmenu option:selected" ).text();
-  //i=$( "#preguntas option:selected" ).text();
-  //refresh();
+
+  refresh();
    despliegaQ(seccion,i)
    console.log("gotoQ",seccion,i);
    save();
 }
 function despliegaQ(sec,num){
   idlab=sec.split(":");
-  quest=typestr(_MENU[sec],num,sec+"|"+num);
-  console.log("display",sec,num);
+  quest=typestr(_MENU[sec],sec+"|"+num,sec+"|"+num);
+  console.log("quest",quest);
   
     $("#caratula").html(quest);
 
     
 }
 function typestr(objeto,id,label){
-  
-  console.log(objeto,id,label)
+  console.log("objeto",objeto)
   Rstr="";
-    pr=objeto[id];
-    if(objeto[id].TIPO=="OPM"){
-      vals=objeto[id].OPCIONES.split("|");
-      Rstr+=objeto[id].REACTIVO+"<Br>";
-      Rstr+='<fieldset  style="" label="'+label+'" idnum="'+id+'" class="form-control  radio">';
-        for (var j = 0; j < vals.length; j++) {
+  if(objeto.type=="caratula"){
+    console.log("caratula!")
+    $("#caratula").css("background","url("+objeto.caratula+")");
+    $("#caratula").css("background-size","cover");
+    for(i=0;i<objeto.inputs.length;i++){
+      label=id+"|"+i;
+      pr=objeto.inputs[i];
+      console.log(pr,i,"tipo")
+      console.log("inputs",objeto.inputs[i].type)
+      if(pr.texto){console.log("text"); Rstr+='<p class="pr" style="position: absolute;\
+        top:'+(parseFloat(pr.position[1]) -100)+'px;\
+        left: '+pr.position[0]+'px;"\>'+pr.texto+'</p>'};
+      if(pr.type=="select"){
+        Rstr+='<select style="position: absolute;\
+        top:'+pr.position[1]+'px;\
+        left: '+pr.position[0]+'px;\
+        width: 220px;\
+        " label="'+label+'" id="'+id+"|"+i+'" class="form-control respuesta select"><option disabled selected value> -- selecciona una opcion -- </option>';
+        for (var j = 0; j < pr.vals.length; j++) {
+          selected="";
+          if(pr.respuesta.toLowerCase()==pr.vals[j].toLowerCase()){selected="selected"; }
+          Rstr+='<option class="" value="'+pr.vals[j].toLowerCase()+'" '+selected+'>'+pr.vals[j]+'</option>';
+        }
+        Rstr+='</select>';
+      }
+      if(pr.type=="radio"){
+
+        Rstr+='<fieldset  style="position: absolute;\
+        top:'+pr.position[1]+'px;\
+        left: '+pr.position[0]+'px;\
+        background-color:transparent;border:0px;\
+        width: 324px;\
+        " label="'+label+'" id="'+id+"|"+i+'" class="form-control  radio">';
+        for (var j = 0; j < pr.vals.length; j++) {
           checked="";
-          if(pr.respuesta.toLowerCase()==_CODES[j]){checked="checked"; }
-          Rstr+='<input label="'+label+'" class="respuesta inradio" type="radio" name="'+label+'" value="'+_CODES[j]+'" '+checked+'> '+vals[j]+'</input><Br>';
+          if(pr.respuesta.toLowerCase()==pr.vals[j].toLowerCase()){checked="checked"; }
+          Rstr+='<input label="'+label+'" class="respuesta inradio" type="radio" name="'+label+'" value="'+pr.vals[j]+'" '+checked+'> '+pr.vals[j];
         }
         Rstr+='</fieldset>';
+      }
+      if(pr.type=="text"){
+        Rstr+='<input type="text" value="'+pr.respuesta+'" style="position: absolute;\
+        top:'+pr.position[1]+'px;\
+        left: '+pr.position[0]+'px;\
+        width: 200px;height:25px;\
+        " label="'+label+'" id="'+id+"|"+i+'" class="form-control respuesta select">';
+        Rstr+='</input>';
+      }
+      if(pr.type=="checkbox"){
+        checked="";
+        if(pr.respuesta=="SI"){checked="checked"}
+        Rstr+='<input label="'+label+'" type="checkbox" style="position: absolute;\
+        top:'+pr.position[1]+'px;\
+        left: '+pr.position[0]+'px;width:20px;\
+        " label="'+label+'" id="'+id+"|"+i+'" class="form-control incheckbox respuesta select" '+checked+'>';
+        Rstr+='</input>';
+      }
     }
-    if(objeto[id].TIPO=="FV"){
-      checkedF="";
-      checkedV="";
-      if(pr.respuesta=="F"){checkedF="checked"; }
-      if(pr.respuesta=="V"){checkedV="checked"; }
-      Rstr+=objeto[id].REACTIVO+"<Br>";
-      Rstr+='<fieldset  style="" label="'+label+'" idnum="'+id+'" class="form-control  radio">';
-      Rstr+='<input label="'+label+'" class="respuesta inradio" type="radio" name="'+label+'" value="F" '+checkedF+'>FALSO</input><input label="'+label+'" class="respuesta inradio" type="radio" name="'+label+'" value="V" '+checkedV+'>VERDADERO</input><Br>';
-    }
+  }
+  
   return Rstr;
 }
 
@@ -444,10 +465,10 @@ function getquest(){
           //console.log(_MENU)
           for(secc in _MENU){
               $("#seccionesmenu").append('<option value="'+secc+'">'+secc+'</option>');
-                
-          }
-            refresh()
-            despliegaQ("112. 1/1-C1E1",0);
+              
+            }
+            //refresh()
+            despliegaQ("Info",0);
             gotoQ(0)
           
         }
@@ -464,7 +485,7 @@ $(document).on('change', '.respuesta', function () {
     element=$(this);
     console.log("change",vv);
     updateAwnser(element,vv);
-    //refresh()
+    refresh()
 });
 function updateAwnser(element, vv){
   console.log(element.attr("label"));
@@ -486,9 +507,9 @@ function updateAwnser(element, vv){
   else{
     console.log("changing",vv)
   }
-  console.log(ids)
-  _MENU[ids[0]][ids[1]]["respuesta"]=vv;
-  pregunta=_MENU[ids[0]][ids[1]];
+  //console.log(ids)
+  _MENU[ids[0]].inputs[ids[2]]["respuesta"]=vv;
+  pregunta=_MENU[ids[0]].inputs[ids[2]];
 
   console.log("changed MENU",_MENU)
 
