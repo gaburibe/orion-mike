@@ -97,28 +97,31 @@ app.post("/saveprogress", function(req,res){
 })
 app.post('/makedoc', function (req, res) {
 
-	var content = fs.readFileSync(path.resolve(__dirname, 'templates/prueba.docx'), 'binary');
-	var zip = new PizZip(content);
-	var doc = new Docxtemplater();
-	doc.loadZip(zip);
+	// var content = fs.readFileSync(path.resolve(__dirname, 'templates/preguntas.docx'), 'binary');
+	// var zip = new PizZip(content);
+	// var doc = new Docxtemplater();
+	// doc.loadZip(zip);
 
 		cuest=req.body["cuestionario"];
+		
 		console.log(cuest)
 		respuestas={
 		    	evaluador:cuest.metadata.evaluador, 
 		    	participante:cuest.metadata.participante,
-		    	fecha:cuest.metadata.fecha,
-		    	p1:cuest["evaluación"]["inputs"][0]["respuesta"],
-		    	p2:cuest["evaluación"]["inputs"][1]["respuesta"],
-		    	regimenfiscal:cuest["Info"]["inputs"][1]["respuesta"],
-		    	legalagreement:cuest["Info"]["inputs"][4]["respuesta"],
-		    	correo:cuest["Info"]["inputs"][2]["respuesta"]
+		    	fecha:cuest.metadata.fecha
+		    	// p1:cuest["evaluación"]["inputs"][0]["respuesta"],
+		    	// p2:cuest["evaluación"]["inputs"][1]["respuesta"],
+		    	// regimenfiscal:cuest["Info"]["inputs"][1]["respuesta"],
+		    	// legalagreement:cuest["Info"]["inputs"][4]["respuesta"],
+		    	// correo:cuest["Info"]["inputs"][2]["respuesta"]
 
 		    };
-
+		    for (var i = 0; i < cuest["112. 1/1-C1E1"].length; i++) {
+				respuestas["p"+i]=cuest["112. 1/1-C1E1"][i].respuesta;
+			}
 		    console.log(respuestas);
-		    writeTemplate(respuestas,"bandeja/demo.docx",function(){
-		    	res.json({link:"bandeja/demo.docx"});
+		    writeTemplate(respuestas,"bandeja/preguntas.docx",function(){
+		    	res.json({link:"bandeja/preguntas.docx"});
 		    });
 		    
 });
@@ -138,7 +141,7 @@ meses={
 	"12":"diciembre",
 }
 function writeTemplate(obj,name,callback){
-	var content = fs.readFileSync(path.resolve(__dirname, 'templates/prueba.docx'), 'binary');
+	var content = fs.readFileSync(path.resolve(__dirname, 'templates/preguntas.docx'), 'binary');
 	var zip = new PizZip(content);
 	var doc = new Docxtemplater();
 	doc.loadZip(zip);
@@ -166,7 +169,7 @@ function writeTemplate(obj,name,callback){
 	             .generate({type: 'nodebuffer'});
 
 	// buf is a nodejs buffer, you can either write it to a file or do anything else with it.
-	fs.writeFileSync(path.resolve(__dirname, "bandeja/demo.docx"), buf);
+	fs.writeFileSync(path.resolve(__dirname, "bandeja/preguntas.docx"), buf);
 	callback();
 }
 
